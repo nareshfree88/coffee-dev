@@ -1,0 +1,196 @@
+button,
+.button {
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+
+  color: $white;
+  text-decoration: none;
+  @extend %button;
+
+  font-family: $alternate_font;
+  // font-weight: 600;
+  text-align: center;
+  // text-transform: uppercase;
+
+  background: $accent;
+  padding: $rythm/1.33 $rythm*2.5 $rythm/1.66;
+  border: none;
+  border-radius: $border_radius;
+  // box-shadow: 0 2px 4px fade-out($black, 0.9);
+
+  transition: opacity $slow, transform $slow, box-shadow $slow, background-color $slow;
+
+  @media #{$tablet_portrait} {
+    // font-size: $small_size;
+  }
+
+  // @media #{$phone} {
+  //   padding: $rythm/3 $rythm/1.5;
+  // }
+
+  // & + & {
+  //   margin-left: $rythm;
+
+  //   @media #{$phone} {
+  //     margin-left: $rythm/2;
+  //   }
+  // }
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background: $accent-1;
+    // text-decoration: none;
+
+    // transform: translateY(-2px);
+    // box-shadow: 0 4px 6px fade-out($black, 0.9);
+  }
+
+  @media (hover: none) {
+    &:hover {
+      color: $white;
+      background: $brand;
+      transform: none;
+      box-shadow: 0 2px 4px fade-out($black, 0.9);
+    }
+  }
+
+  &:active {
+    top: 1px;
+  }
+
+  &.button--muted {
+    color: $text;
+    background: $muted-alt;
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+      // color: $white;
+      background: $muted;
+    }
+  }
+
+  &.button--alt {
+    color: $white;
+    background: $brand;
+
+    &:hover,
+    &:focus {
+      background: $grey-1;
+    }
+  }
+
+  &.button--success {
+    color: $white;
+    background: $kelly;
+
+    &:hover,
+    &:focus {
+      background: $grey-1;
+    }
+  }
+
+  &.button--facebook,
+  &.button--twitter,
+  &.button--gmail {
+    color: $white;
+    background: #3b5998;
+
+    &:hover,
+    &:focus {
+      background: $grey-1;
+    }
+  }
+
+  &.button--twitter {
+    background: #1da1f2;
+  }
+
+  &.button--gmail {
+    background: #dd4b39;
+  }
+
+  &.button--small {
+    @extend %small;
+    padding: $rythm/1.66 $rythm*1.66 $rythm/2;
+  }
+  
+
+  &.button--big {
+    // font-size: $slight_size;
+    // line-height: $slight_size;
+    // padding: $rythm*1.5 $rythm*2 $rythm*1.33;
+    // border-radius: $border_radius*1.5;
+
+    // @media #{$phone} {
+    //   font-size: $base_size;
+    //   line-height: $base_size;
+    //   padding: $rythm*1 $rythm*1.5 $rythm*0.88;
+    // }
+  }
+
+  &.button--underline {
+    color: $text;
+    font-size: 0.88em;
+    font-weight: bold;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    border-bottom: $rythm/10 solid;
+    border-radius: 0;
+
+    &:hover,
+    &:focus {
+      color: $accent;
+    }
+  }
+
+  &.button--transparent {
+    @extend %paragraph;
+    color: inherit;
+    font-weight: normal;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    text-align: inherit;
+    letter-spacing: 0;
+    padding: 0;
+
+    &:hover,
+    &:focus {
+      color: $accent;
+    }
+  }
+
+  &.button--full {
+    padding-right: 0;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  &.button--center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  &.button--faded {
+    opacity: 0.33;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  form[disabled] &,
+  &.button--disabled,
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.33;
+  }
+}
